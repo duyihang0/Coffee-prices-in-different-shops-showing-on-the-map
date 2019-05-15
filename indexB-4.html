@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>index4.html: Leaflet Tutorial GEOG 187</title>
+  	<meta charset="utf-8"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.ie.css" /><![endif]-->
+	<style>
+    	body { margin:0; padding:0; }
+    	#map { position:absolute; top:50px; bottom:50px; left:50px; width:50%; height:80%;}
+  	</style>
+</head>
+<body>
+<div id='map'></div>
+<script src="points.geoJson" type="text/javascript"></script>
+<script type='text/javascript'>
+		var map = L.map('map').setView([43.4697101,-80.5421163], 15);
+		L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution: 'Map data &copy; 2013 OpenStreetMap contributors'}).addTo(map);
+
+
+        var marker = L.marker([43.47347378,-80.54623865]).addTo(map);
+    		marker.bindPopup("AHS Starbucks");
+        var marker = L.marker([43.46947879,-80.54013898]).addTo(map);
+    		marker.bindPopup("Brewed Awakening");
+        var marker = L.marker([43.4697101,-80.5421163]).addTo(map);
+    		marker.bindPopup("Browsers Café");
+        var marker = L.marker([43.47147967,-80.54225304]).addTo(map);
+    		marker.bindPopup("CEIT Cafe");
+        var marker = L.marker([43.46647324,-80.54491416]).addTo(map);
+    		marker.bindPopup("Common Ground");
+        var marker = L.marker([43.47265331,-80.54321767]).addTo(map);
+    		marker.bindPopup("DC Tim Hortons");
+        var marker = L.marker([43.47279105,-80.54221862]).addTo(map);
+    		marker.bindPopup("DC Tim Hortons Express");
+        var marker = L.marker([43.46834466,-80.54283363]).addTo(map);
+    		marker.bindPopup("ES Coffee Shop");
+        var marker = L.marker([43.46897741,-80.5455293]).addTo(map);
+    		marker.bindPopup("Funcken Cafe");
+        var marker = L.marker([43.4679801,-80.5417618]).addTo(map);
+    		marker.bindPopup("Hagey hall");
+        var marker = L.marker([43.47142269,-80.54537848]).addTo(map);
+    		marker.bindPopup("International News Grab & Go");
+        var marker = L.marker([43.4684423,-80.54142639]).addTo(map);
+    		marker.bindPopup("Liquid assets");
+        var marker = L.marker([43.47182514,-80.54348111]).addTo(map);
+    		marker.bindPopup("Math Coffee and Donuts");
+        var marker = L.marker([43.4728931,-80.5355477]).addTo(map);
+    		marker.bindPopup("Mel's Diner");
+        var marker = L.marker([43.4715836,-80.5497888]).addTo(map);
+    		marker.bindPopup("Mudies");
+        var marker = L.marker([43.47266627,-80.5350612]).addTo(map);
+    		marker.bindPopup("Onezo Tropical");
+        var marker = L.marker([43.46920088,-80.54032359]).addTo(map);
+    		marker.bindPopup("Pastry Plus");
+        var marker = L.marker([43.46801366,-80.5419243]).addTo(map);
+    		marker.bindPopup("Planet Bean Coffee");
+        var marker = L.marker([43.4687045,-80.5474696]).addTo(map);
+    		marker.bindPopup("Renison University College Cafeteria");
+        var marker = L.marker([43.4709516,-80.5429655]).addTo(map);
+    		marker.bindPopup("Science Coffee & Donut Shop");
+        var marker = L.marker([43.47245421,-80.53586751]).addTo(map);
+    		marker.bindPopup("Second Cup");
+        var marker = L.marker([43.46940367,-80.54551152]).addTo(map);
+    		marker.bindPopup("SJU caf");
+        var marker = L.marker([43.47327308,-80.5459864]).addTo(map);
+    		marker.bindPopup("Starbucks-AHS");
+        var marker = L.marker([43.47056624,-80.54372959]).addTo(map);
+    		marker.bindPopup("Starbucks-STC");
+        var marker = L.marker([43.4696711,-80.5455375]).addTo(map);
+    		marker.bindPopup("St.Jeromes Funcken 2.0");
+        var marker = L.marker([43.47200109,-80.5390998]).addTo(map);
+    		marker.bindPopup("Sweet Dreams Tea Shop");
+        var marker = L.marker([43.46916379,-80.5401266]).addTo(map);
+    		marker.bindPopup("Tim Horton");
+        var marker = L.marker([43.46879952,-80.54258301]).addTo(map);
+    		marker.bindPopup("Tim hortons");
+        var marker = L.marker([43.47136364,-80.54519472]).addTo(map);
+    		marker.bindPopup("Tim Hortons");
+        var marker = L.marker([43.4682276,-80.5434879]).addTo(map);
+    		marker.bindPopup("William's Fresh Cafe");
+
+function onEachFeature(feature, layer) {
+    if (feature.properties) {
+        layer.bindPopup("<b>" + feature.properties.Point + "</b> is located at " + feature.geometry.coordinates + "  lat/long.");
+    }
+}
+var points = new L.geoJson(points, {
+		onEachFeature: onEachFeature
+	}).addTo(map);
+	</script>
+ </body>
+</html>

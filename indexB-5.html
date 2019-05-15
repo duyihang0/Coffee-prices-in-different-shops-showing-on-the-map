@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>index5.html: Leaflet Tutorial GEOG 187</title>
+  	<meta charset="utf-8"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.ie.css" /><![endif]-->
+	<style>
+    	body { margin:0; padding:0; }
+    	#map { position:absolute; top:50px; bottom:50px; left:50px; width:50%; height:80%;}
+  	</style>
+</head>
+<body>
+<div id='map'></div>
+<script src="coffeeshop.geojson" type="text/javascript"></script>
+<script type='text/javascript'>
+		var map = L.map('map').setView([43.470, -80.544], 15);
+		L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution: 'Map data &copy; 2013 OpenStreetMap contributors'}).addTo(map);
+
+
+
+
+
+    var marker = L.marker([43.47347378,-80.54623865]).addTo(map);
+    marker.bindPopup("AHS Starbucks <br> tea_price : 2.45 ");
+    var marker = L.marker([43.46947879,-80.54013898]).addTo(map);
+    marker.bindPopup("Brewed Awakening<br> tea_price: 2.25");
+    var marker = L.marker([43.4697101,-80.5421163]).addTo(map);
+    marker.bindPopup("Browsers Café<br> tea_price: 2.25");
+    var marker = L.marker([43.47147967,-80.54225304]).addTo(map);
+    marker.bindPopup("CEIT Cafe<br> tea_price: 2.25");
+    var marker = L.marker([43.46647324,-80.54491416]).addTo(map);
+    marker.bindPopup("Common Ground<br> tea_price: 1.5");
+    var marker = L.marker([43.47265331,-80.54321767]).addTo(map);
+    marker.bindPopup("DC Tim Hortons<br> tea_price: 1.69");
+    var marker = L.marker([43.47279105,-80.54221862]).addTo(map);
+    marker.bindPopup("DC Tim Hortons Express<br> tea_price: 1.69");
+    var marker = L.marker([43.46834466,-80.54283363]).addTo(map);
+    marker.bindPopup("ES Coffee Shop<br> tea_price: 0.75");
+    var marker = L.marker([43.46897741,-80.5455293]).addTo(map);
+    marker.bindPopup("Funcken Cafe<br> tea_price: 0");
+    var marker = L.marker([43.4679801,-80.5417618]).addTo(map);
+    marker.bindPopup("H3 cafe<br> tea_price: 2.99");
+    var marker = L.marker([43.47142269,-80.54537848]).addTo(map);
+    marker.bindPopup("International News Grab & Go<br> tea_price: 1.52");
+    var marker = L.marker([43.4684423,-80.54142639]).addTo(map);
+    marker.bindPopup("Liquid assets<br> tea_price:2.25");
+    var marker = L.marker([43.47182514,-80.54348111]).addTo(map);
+    marker.bindPopup("Math Coffee and Donuts<br> tea_price: 0.075");
+    var marker = L.marker([43.4728931,-80.5355477]).addTo(map);
+    marker.bindPopup("Mel's Diner<br> tea_price:2.49");
+    var marker = L.marker([43.4715836,-80.5497888]).addTo(map);
+    marker.bindPopup("Mudies<br> tea_price: 0");
+    var marker = L.marker([43.47266627,-80.5350612]).addTo(map);
+    marker.bindPopup("Onezo Tropical<br> tea_price: 4.99");
+    var marker = L.marker([43.46920088,-80.54032359]).addTo(map);
+    marker.bindPopup("Pastry Plus<br> tea_price: 1.89");
+    var marker = L.marker([43.46801366,-80.5419243]).addTo(map);
+    marker.bindPopup("Planet Bean Coffee<br> tea_price: 2.25");
+    var marker = L.marker([43.4687045,-80.5474696]).addTo(map);
+    marker.bindPopup("Renison University College Cafeteria<br> tea_price: 1.66");
+    var marker = L.marker([43.4709516,-80.5429655]).addTo(map);
+    marker.bindPopup("Science Coffee & Donut Shop<br> tea_price: 0");
+    var marker = L.marker([43.47245421,-80.53586751]).addTo(map);
+    marker.bindPopup("Second Cup<br> tea_price: 2.25");
+    var marker = L.marker([43.46940367,-80.54551152]).addTo(map);
+    marker.bindPopup("SJU caf<br> tea_price: 0");
+    var marker = L.marker([43.47327308,-80.5459864]).addTo(map);
+    marker.bindPopup("Starbucks-AHS<br> tea_price: 2.57");
+    var marker = L.marker([43.47056624,-80.54372959]).addTo(map);
+    marker.bindPopup("Starbucks-STC<br> tea_price: 2.57");
+    var marker = L.marker([43.4696711,-80.5455375]).addTo(map);
+    marker.bindPopup("St.Jeromes Funcken 2.0<br> tea_price: 0");
+    var marker = L.marker([43.47200109,-80.5390998]).addTo(map);
+    marker.bindPopup("Sweet Dreams Tea Shop<br> tea_price: 3.83");
+    var marker = L.marker([43.46916379,-80.5401266]).addTo(map);
+    marker.bindPopup("Tim Horton<br> tea_price: 1.69");
+    var marker = L.marker([43.46879952,-80.54258301]).addTo(map);
+    marker.bindPopup("Tim hortons<br> tea_price: 1.69");
+    var marker = L.marker([43.47136364,-80.54519472]).addTo(map);
+    marker.bindPopup("Tim Hortons<br> tea_price: 1.69");
+    var marker = L.marker([43.4682276,-80.5434879]).addTo(map);
+    marker.bindPopup("William's Fresh Cafe<br> tea_price: 2.29");
+
+
+function onEachFeature(feature, layer) {
+    if (feature.properties) {
+        layer.bindPopup("<b>" + feature.properties.name + "</b> serves a small coffee for $" + feature.properties.tea_pri);
+    }
+}
+var coffeeshop = new L.geoJson(coffeeshop, {
+		onEachFeature: onEachFeature
+	}).addTo(map);
+	</script>
+ </body>
+</html>
